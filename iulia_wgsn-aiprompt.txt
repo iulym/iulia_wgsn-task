@@ -1,0 +1,134 @@
+
+AI PROMPT: WOMENSWEAR JEANS E-COMMERCE PERFORMANCE ANALYSIS
+
+You are a data analyst specialising in retail and fashion analytics. Analyse the performance of the womenswear jeans category using the datasets provided: Weekly_tracker, Product_dimensions, and Social.
+
+OBJECTIVE
+
+Produce a structured analytical assessment of womenswear jeans performance across e-commerce and social media, identifying key commercial trends, performance drivers, and strategic opportunities.
+
+DATA UNDERSTANDING
+
+Use the following datasets:
+
+Data dictionary
+Weekly_tracker (e-commerce, filtered on the womenswear jeans category)
+WEEK_START_DATE (int): first date in the week as per fashion calendar 
+PC_ID (int): anonymised product identifier
+ORIGINAL_PRICE (int): product’s original price
+PRODUCT_INSTOCK (bool): 1 if the product is in stock; 0 otherwise
+PRODUCT_OUT_OF_STOCK (bool): 1 if the product is out of stock; 0 otherwise
+PRODUCT_NEW_IN (bool): 1 if the product is new in that week; 0 otherwise
+PRODUCT_MARKDOWN (bool): 1 if the product is in markdown; 0 otherwise
+WEEKLY_AVERAGE_PRICE (float): average price across the week
+WEEKLY_AVERAGE_MARKDOWN_PRICE (float): average markdown price across the week
+AVG_MARKDOWN_DIFFERENCE (float): difference between original price and average markdown price
+Product_dimensions (e-commerce, filtered on the womenswear jeans category)
+PC_ID (int): anonymised product identifier
+DIVISION (string): the division of this product
+DEPARTMENT (string): the department of this product
+RETAILER_NAME (string): anonymised retailer name
+RETAILER_SEGMENT (string): one of “innovator”, “mass” or “conservative”
+CATEGORY (string): the category of this product
+STYLE (string): the style of this product
+PRODUCT_DESCRIPTION (string): anonymised product description
+Social (instagram data, filtered on posts relating to jeans)
+USER_ID (int): anonymised user identifier
+REGION (string): signifies which region the post comes from
+SEGMENT (string): one of “innovator”, “mass” or “conservative”
+CONTENT (string): anonymised caption with special characters removed
+POST_ID (int): anonymised post identifier
+POST_DATE (string): post date
+LIKES (int): total likes on the post
+COMMENTS (int): total comments on the post
+
+E-commerce metrics
+Assortment mix %: percentage of the total unique e-commerce products represented by each category or style
+New in mix %: percentage of the total unique e-commerce products flagged as new in (PRODUCT_NEW_IN = 1) represented by each category or style
+Full price out of stock % (FPOOS %): percentage of weekly product records that are out of stock (PRODUCT_OUT_OF_STOCK = 1) and not in markdown (PRODUCT_MARKDOWN = 0) across the season
+Markdown %: percentage of weekly product records flagged as on markdown (PRODUCT_MARKDOWN = 1) across the season
+Markdown depth %: the average discount from the original price for a product or style over a specified period of time (AVG_MARKDOWN_DIFFERENCE / ORIGINAL_PRICE)
+
+
+Social media metrics
+Penetration: percentage of the total posts containing trend keyword(s) in a period of time
+
+Fashion calendar
+Spring/Summer analysis dates are February-July inclusive and Autumn/Winter analysis dates are August-January inclusive
+
+Join datasets using PC_ID to link Weekly_tracker and Product_dimensions.
+
+ANALYTICAL SCOPE
+
+1. Data Preparation
+
+- Clean missing or invalid values. 
+- Remove duplicate PC_ID records where necessary. 
+- Ensure consistent data types across joins. 
+- Clearly state any assumptions made during cleaning.
+
+2. E-commerce Performance Analysis
+
+Filter analysis to the womenswear jeans category and the Spring/Summer 2025 season (February to July inclusive). 
+
+Calculate the following metrics:
+
+- Assortment mix percentage: share of unique products represented by each style.
+- New in mix percentage: share of products flagged PRODUCT_NEW_IN = 1.
+- Full Price Out Of Stock percentage (FPOOS percentage): products that are out of stock and not on markdown.
+- Markdown percentage: share of weekly records flagged PRODUCT_MARKDOWN = 1.
+- Markdown depth percentage: AVG_MARKDOWN_DIFFERENCE divided by ORIGINAL_PRICE.
+- Analyse performance by STYLE and RETAILER_SEGMENT.
+- Identify best performing and worst performing styles and evaluate trade-offs between markdown dependency and availability.
+
+3. Seasonal Markdown Behaviour
+
+- Track markdown depth weekly across the Spring/Summer 2025 season.
+- Calculate the seasonal average markdown depth.
+- Flag weeks where markdown depth exceeds the seasonal average.
+- Provide commercial interpretation of these patterns.
+
+4. Sustainability Trend Analysis
+
+Define sustainability using keyword detection with the following terms:
+- sustainable, sustainably, sustainability, recycled, organic, upcycled, upcycling.
+
+Compute the following metrics:
+
+Social metrics:
+- Trend penetration defined as the percentage of posts containing sustainability keywords.
+- Average engagement defined as likes plus comments.
+- Engagement lift compared to non-sustainability posts.
+- Segment comparison across innovator, mass, and conservative audiences.
+
+E-commerce metrics:
+- Share of products containing sustainability keywords.
+- Distribution of sustainability positioning by style and retailer segment.
+
+5. Comparative Trend Analysis
+
+- Compare sustainability discussion on social media with sustainability adoption in e-commerce assortments.
+- Identify whether retailers are leading, matching, or lagging consumer conversation.
+
+6. Additional Metrics Beyond Penetration
+
+Propose and calculate additional indicators such as engagement share, comment intensity, price positioning differences, and markdown sensitivity of sustainable products.
+
+7. Outputs Required
+
+- Provide clear tables of calculated metrics.
+- Include data visualisations such as time series charts, bar charts, and comparative analyses.
+- Present bullet-point analytical insights.
+- Explicitly state assumptions made during analysis.
+- Provide business interpretation rather than only statistical results.
+
+8. Final Deliverable
+
+Conclude with actionable recommendations for a womenswear retailer’s jeans range covering assortment planning, pricing strategy, markdown optimisation, sustainability positioning, and content strategy alignment with consumer engagement.
+
+CONSTRAINTS
+
+- Use clear analytical reasoning.
+- Avoid unsupported assumptions.
+- Prefer interpretable metrics over complex modelling approaches.
+- Explain methodology before presenting conclusions.
